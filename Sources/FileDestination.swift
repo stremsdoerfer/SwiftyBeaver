@@ -170,7 +170,7 @@ open class FileDestination: BaseDestination {
         var success = false
         let coordinator = NSFileCoordinator(filePresenter: nil)
         var error: NSError?
-        coordinator.coordinate(writingItemAt: url, error: &error) { url in
+        coordinator.coordinate(writingItemAt: url, options: .forMerging, error: &error) { url in
             do {
                 if fileManager.fileExists(atPath: url.path) == false {
 
